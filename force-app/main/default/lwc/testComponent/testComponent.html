@@ -1,0 +1,38 @@
+<template>
+    <p class="slds-text-heading_small">{activeSectionMessage}</p>
+
+    <lightning-button onclick={handleSetActiveSectionC} label="Abrir la seccion C"></lightning-button>
+    <lightning-button onclick={handleSetActiveSectionB} label="Abrir la seccion B"></lightning-button>
+    <lightning-button onclick={handleSetActiveSectionA} label="Abrir la seccion A"></lightning-button>
+    <lightning-accordion class="example-accordion"
+                         onsectiontoggle={handleToggleSection}
+                         active-section-name="B">
+        <lightning-accordion-section name="A" label="Paises Sudamericanos">
+            <lightning-button-menu slot="actions"
+                                  alternative-text="Show menu"
+                                  icon-size="x-small"
+                                  menu-alignment="right">
+                <lightning-menu-item value="New" label="Menu Item One"></lightning-menu-item>
+                <lightning-menu-item value="Edit" label="Menu Item Two"></lightning-menu-item>
+            </lightning-button-menu>
+            <p>Sudamerica</p>
+            <p>Ecuador</p>
+            <p>Colombia</p>
+            <p>Peru</p>
+        </lightning-accordion-section>
+
+        <lightning-accordion-section name="B" label="Paises Europeos">
+            <p>Europa</p>
+            <p>Italia</p>
+            <p>Francia</p>
+            <p>España</p>
+        </lightning-accordion-section>
+
+        <lightning-accordion-section name="C" label="Paises Asiaticos">
+            <p>Asia</p>
+            <p>China</p>
+            <p>Japon</p>
+            <p>Korea del Norte</p>
+        </lightning-accordion-section>
+    </lightning-accordion>
+</template>
